@@ -24,3 +24,25 @@ h1 {
 .section-title {
     color: #2ddf5c;
 }
+
+/*
+Cascading means that multiple rules can apply to the same element. One rule is a selector with the properties it sets.
+So each CSS declaration in this file.
+Specifity has to be used in order to resolve conflicts arising from applying multiple rules to the same element.
+The order of specifity is as follows, with the last having the lowest specifity.
+    Inline styles
+    #ID selector
+    .class, :pseudo-class and [attribute] selectors
+    <Tag> and ::pseudo-element selectors
+    Universal selector *
+
+The universal selector, however, is very inefficient, so it's generally better to style the body tag.
+*/
+
+/*
+Elements inherit styles from their parents both direct or indirect. Inheritance has a very low specifity.
+Directly selecting an element has a higher specifity than inheritance.
+*/
+body {
+    font-family: 'Montserrat', sans-serif;
+}
