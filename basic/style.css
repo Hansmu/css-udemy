@@ -1,4 +1,14 @@
-.header {
+/*
+There are different types of selectors.
+    Element selectors have nothing preceding them. h1
+    A class selector has a dot preceding it. .banana
+    An ID selector has a pound sign preceding it. #banana
+    A universal selector is * which is used to display everything.
+    Attribute selectors can be used to select elements by attribute. You use brackets to select the attribute. [disabled]
+*/
+
+
+#product-overview {
     background: #ff1b68;
 }
 
@@ -9,4 +19,8 @@ h1 {
     browser defaults. However, if you want to use a specific font, then you have to take a different approach.
     For example Google Fonts could be used to include fonts that don't exist by default. */
     font-family: 'Anton', sans-serif;
+}
+
+.section-title {
+    color: #2ddf5c;
 }
