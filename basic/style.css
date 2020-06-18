@@ -1,0 +1,12 @@
+.header {
+    background: #ff1b68;
+}
+
+h1 {
+    color: white;
+    /* Browsers have default fonts matching with certain values. For example with Chrome you have Helvetica
+    matching with sans-serif. sans-serif, serif and monospace are always great values as they use the
+    browser defaults. However, if you want to use a specific font, then you have to take a different approach.
+    For example Google Fonts could be used to include fonts that don't exist by default. */
+    font-family: 'Anton', sans-serif;
+}
