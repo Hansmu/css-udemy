@@ -12,13 +12,32 @@ There are different types of selectors.
     background: #ff1b68;
 }
 
-h1 {
+/* Space separated selector does not mean direct child but any depth child. */
+/*
+There are however more combinators
+    * Adjacent sibling is denoted with a +. div + p {}. This style would be applied to elements that are on
+    the same level. In the example it would be applied to paragraph tags that come right after a div.
+    * General sibling is denoted with a ~. div ~ p {}. On the same level as well, but now the element
+    doesn't have to come right after the first element. It would just require for the first element to be
+    somewhere before the second element on the same level.
+    * Child is denoted with a >. div > p {}. Means that the element must be a direct child. So a paragraph
+    tag inside the div tag. If there's a separate element wrapping the paragraph tag, then the style wouldn't
+    get applied.
+    * Descendant uses a whitespace. div p {}. The level doesn't matter here. Just that the paragraph tag should
+    be somewhere inside of a div tag. Doesn't matter how deep the nesting of the child is.
+ */
+#product-overview h1 {
     color: white;
     /* Browsers have default fonts matching with certain values. For example with Chrome you have Helvetica
     matching with sans-serif. sans-serif, serif and monospace are always great values as they use the
     browser defaults. However, if you want to use a specific font, then you have to take a different approach.
     For example Google Fonts could be used to include fonts that don't exist by default. */
     font-family: 'Anton', sans-serif;
+    /*
+    We could overwrite this styling by setting font-family: inherit; to a h1 tag to make sure that specific
+    tag would use inheritance over the specific rule. A better way might be to use an id or a combinator.
+    A combinator allows to combine multiple selectors.
+    */
 }
 
 .section-title {
