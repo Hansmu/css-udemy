@@ -73,4 +73,6 @@ Directly selecting an element has a higher specifity than inheritance.
 */
 body {
     font-family: 'Montserrat', sans-serif;
+    /* The browser adds margins to the body element by default. */
+    margin: 0;
 }
