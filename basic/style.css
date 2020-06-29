@@ -118,6 +118,27 @@ body {
     padding: 8px 16px;
 }
 
+.main-header > div {
+    display: inline-block;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    /*
+    Not the best approach to read the pixels from a rendered page like that, but it'll work for now.
+    Taking the exact size of the element won't work either, as a new line in our editor will add a new inline element with
+    the content being a space. So we need to subtract a little bit extra. A hacky solution and a better solution will follow.
+    */
+    width: calc(100% - 47px);
+}
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Reset the default behavior and remove bullet points. Padding 0 already does that, though. */
+}
+
 /*
 Block level elements take up an entire line. An inline element does not, so several inline elements can be on the same line.
 Both use the box model, but for an inline element we cannot set the margin top and bottom, as they aren't positioned in the
