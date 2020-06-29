@@ -10,15 +10,39 @@ There are different types of selectors.
 
 #product-overview {
     background: #ff1b68;
+    /*!**/
+    /*The padding gets added around the margin of the h1 tag.*/
+    /*This is because the content of the element is considered the content + any margins it might have.*/
+    /*Because margins and padding should not overlap, hence padding is added after the margin of the child*/
+    /*elements.*/
+    /**!*/
+    /*padding: 20px;*/
+    /*border: 5px black solid;*/
+    /*margin: 20px;*/
+
+    /* Adding width 100% would do nothing for this element, as it's a div. Block elements take up 100% of their area anyway. */
     /*
-    The padding gets added around the margin of the h1 tag.
-    This is because the content of the element is considered the content + any margins it might have.
-    Because margins and padding should not overlap, hence padding is added after the margin of the child
-    elements.
+    Setting height to 100% wouldn't do much either. This is because it takes up as much space as the parent container would allow it to take up.
+    It would only expand by the size of the margins that the header tag has. This is because while the parent takes up a larger area, then
+    the parent only takes up as much space as its children require it to take up. If the child tried to take up 100%, then it would create a
+    kind of infinite loop, so it cancels out. If you'd manually set the size of the parent to N pixels, then the 100% size would
+    have an effect. Then it would take up 100% of the height of the parent.
+    Basically, height percentages are calculated based on the height of the parent element. If say a parent element is 500 pixels and a child
+    says that it is 100% height, then it'll be 500 pixels in size. This would apply for all the children that have the 100% constraint.
+    So two elements with 100% height would both be 500 pixels each, causing the total area taken of the children to be 1000 pixels, while
+    the parent element is 500 pixels.
+    As the height percentages are dependent on the parent, then in order to have an element take up 100% of the page, then
+    you'd have to pass to the very top element, which is the html tag, then the 100% would start propagating down. This is a
+    more legacy option, though. There are more modern units to do this.
     */
-    padding: 20px;
-    border: 5px black solid;
-    margin: 20px;
+
+    /*
+    All elements have a certain way of calculating the width and height of an element. The default behavior is called
+    content-box, it can be overridden using the box-sizing property. Border-box can be used to make it include the
+    padding and border. There is no way to make it include the margin.
+    box-sizing: border-box; is often the more convenient way to size the elements, so you may often find it being used
+    as the default.
+    */
 }
 
 /* Space separated selector does not mean direct child but any depth child. */
@@ -75,4 +99,13 @@ body {
     font-family: 'Montserrat', sans-serif;
     /* The browser adds margins to the body element by default. */
     margin: 0;
+}
+
+* {
+    /*
+    Cannot add this to the body element, as the inheritance doesn't work there. The reason is that the browser adds
+    its own model for block level elements. So each element has to be manually overridden to make sure that border-box
+    works.
+    */
+    box-sizing: border-box;
 }
