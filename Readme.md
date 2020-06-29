@@ -26,3 +26,8 @@ get merged into one with the larger winning.
 
 Shorthand properties combine multiple properties
 into a single property.
+
+**display:none vs visibility: hidden** - display none removes the element from
+the view and it doesn't take up any space. Other elements can take its place.
+Visibility: hidden makes it keep its place, so it's only invisible, it isn't
+removed from the DOM.

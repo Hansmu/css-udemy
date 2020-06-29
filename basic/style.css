@@ -117,3 +117,20 @@ body {
     background: #2ddf5c;
     padding: 8px 16px;
 }
+
+/*
+Block level elements take up an entire line. An inline element does not, so several inline elements can be on the same line.
+Both use the box model, but for an inline element we cannot set the margin top and bottom, as they aren't positioned in the
+flow as block level elements are. The default behavior for elements can be changed using the display property.
+inline-block mixes the functions. The elements can still go next to each other, but they behave like block level elements
+when setting top and bottom margins, paddings etc, which are not possible for inline elements.
+
+Inline boxes are laid out horizontally in a box called a line box. If there isn't enough horizontal space to fit all elements
+into a single line, another line box is created under the first on. A single inline element may then be split across lines.
+When an inline box is split between lines, then it is still logically a single box. So its horizontal paddings are applied
+to the start and end of the box, not on every line it occupies. Vertical padding and borders are still applied. However,
+it will not push away elements above or below it.
+*/
+.main-nav__item {
+    display: inline-block;
+}
