@@ -120,6 +120,14 @@ body {
 
 .main-header > div {
     display: inline-block;
+    vertical-align: middle;
+}
+
+.main-header__brand {
+    color: #0e4f1f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
 }
 
 .main-nav {
@@ -130,7 +138,8 @@ body {
     Taking the exact size of the element won't work either, as a new line in our editor will add a new inline element with
     the content being a space. So we need to subtract a little bit extra. A hacky solution and a better solution will follow.
     */
-    width: calc(100% - 47px);
+    width: calc(100% - 67px);
+    vertical-align: middle;
 }
 
 .main-nav__items {
@@ -154,4 +163,29 @@ it will not push away elements above or below it.
 */
 .main-nav__item {
     display: inline-block;
+    margin: 0 16px;
 }
+
+/* A separate class would have a higher performance, but in most cases you wouldn't even notice the difference. */
+.main-nav__item a {
+    color: #0e4f1f;
+    /* Wouldn't work when setting on the parent, as everything that targets an element directly has a higher priority then
+     inheritance.*/
+    text-decoration: none;
+}
+
+/*
+Pseudo classes let us define styles for an element's specific state. Like hover and active. Defined with a single :, so :hover
+Pseudo elements let us define styles for a specific part of an element. Defined with a double :, so ::after
+*/
+.main-nav__item a:hover,
+/* A comma can be used to group combinators. A comma is not a combinator. */
+.main-nav__item a:active{
+    color: white;
+}
+
+/*!* We can add extra content to an element using the after selector *!*/
+/*.main-nav__item a::after {*/
+/*    content: " (Link)";*/
+/*    color: red;*/
+/*}*/
