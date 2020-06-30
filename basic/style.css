@@ -5,6 +5,7 @@ There are different types of selectors.
     An ID selector has a pound sign preceding it. #banana
     A universal selector is * which is used to display everything.
     Attribute selectors can be used to select elements by attribute. You use brackets to select the attribute. [disabled]
+    Element selectors can be chained with class etc. It selects an element with that specific property. Ex a.active
 */
 
 
@@ -193,6 +194,16 @@ Pseudo elements let us define styles for a specific part of an element. Defined 
 /*    content: " (Link)";*/
 /*    color: red;*/
 /*}*/
+
+/*
+A :not() pseudoselector can be used to select all elements that are not with something.
+The example selects any anchor tag that does not have the active class. Generally there's a
+positive way of writing the same rules. It's easier to mess up with the not selector and you might
+start adding needless complexity. :not() also takes more computation.
+a:not(.active) {
+    color: blue;
+}
+*/
 
 /*
 As we want to override the styles applied by another rule, then the order in which they are defined in
