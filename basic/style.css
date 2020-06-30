@@ -172,6 +172,8 @@ it will not push away elements above or below it.
     /* Wouldn't work when setting on the parent, as everything that targets an element directly has a higher priority then
      inheritance.*/
     text-decoration: none;
+    font-weight: bold;
+    padding: 3px 0;
 }
 
 /*
@@ -182,6 +184,7 @@ Pseudo elements let us define styles for a specific part of an element. Defined 
 /* A comma can be used to group combinators. A comma is not a combinator. */
 .main-nav__item a:active{
     color: white;
+    border-bottom: 2px solid white;
 }
 
 /*!* We can add extra content to an element using the after selector *!*/
@@ -189,3 +192,25 @@ Pseudo elements let us define styles for a specific part of an element. Defined 
 /*    content: " (Link)";*/
 /*    color: red;*/
 /*}*/
+
+/*
+As we want to override the styles applied by another rule, then the order in which they are defined in
+the CSS file does matter, because they have the same specifity.
+*/
+.main-nav__item--cta a {
+    color: white;
+    background: #ff1b68;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+/*
+As we don't want any of the original styling, then we have to overwrite all of the properties, otherwise
+it'll still use the existing properties from the other class.
+*/
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+    background: white;
+    color: #ff1b68;
+    border-bottom: none;
+}
