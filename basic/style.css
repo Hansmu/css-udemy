@@ -299,3 +299,9 @@ it'll still use the existing properties from the other class.
     background: white;
     color: #0e4f1f;
 }
+
+/* The outline isn't a part of the box model. The outline is an additional border like thing that's
+applied in between the border and margin. */
+.button:focus {
+    outline: none;
+}
