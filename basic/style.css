@@ -123,6 +123,7 @@ body {
 
 .main-header > div {
     display: inline-block;
+    /* Vertical align is used to vertically align the element. Can be middle, top etc.*/
     vertical-align: middle;
 }
 
@@ -304,4 +305,73 @@ it'll still use the existing properties from the other class.
 applied in between the border and margin. */
 .button:focus {
     outline: none;
+}
+
+#key-features {
+    background: #ff1b68;
+    margin-top: 80px;
+    padding: 16px;
+}
+
+#key-features .section-title {
+    color: white;
+    margin: 32px;
+}
+
+.key-features__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.key-feature {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+
+.key-feature__description {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.key-feature__image {
+    background: #ffcede;
+    width: 128px;
+    height: 128px;
+    border: 2px solid #424242;
+    /* Setting a border radius of 50% creates a perfect circle. */
+    border-radius: 50%;
+    /* Centers the element horizontally. */
+    margin: auto;
+}
+
+.main-footer {
+    background: black;
+    padding: 32px;
+    margin-top: 48px;
+}
+
+.main-footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.main-footer__link {
+    display: inline-block;
+    margin: 0 16px;
+}
+
+.main-footer__link a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active {
+    color: #ccc;
 }
