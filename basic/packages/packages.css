@@ -12,7 +12,9 @@ main {
 }
 
 .package:hover,
-.package:active {
+.package:active,
+#free:hover,
+#free:active {
     border: 2px solid #ffcede;
 }
 
@@ -53,4 +55,25 @@ main {
 
 #premium .package__sub-title {
     color: #bbb;
+}
+
+/* text-align right cannot be used as there's no inline element. float can be used in this case, but
+it can produce strange issues, so it's not that widely used anymore these days. Flex is more popular.
+float means that you want to overwrite the default positioning of an element and then push it elsewhere.
+It takes an element out of the document flow. By default it could be used to position an image inside
+of text. With elements, however, it needs a bit of a hack, to make sure that the elements don't take up
+its position. */
+#free {
+    float: right;
+    border-right: none;
+    border-left: 2px solid #0e4f1f;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    text-align: right;
+}
+
+/* Clear floats on both sides (left and right, which are the values that can be assigned to float).
+Everything that comes after this class will not respect previous floats.
+ */
+.clearfix {
+    clear: both;
 }
