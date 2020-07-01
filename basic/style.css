@@ -80,6 +80,7 @@ There are however more combinators
 
 .section-title {
     color: #2ddf5c;
+    text-align: center;
 }
 
 /*
@@ -225,4 +226,76 @@ it'll still use the existing properties from the other class.
     background: white;
     color: #ff1b68;
     border-bottom: none;
+}
+
+.plan {
+    background: #d5ffdc;
+    text-align: center;
+    padding: 16px;
+    margin: 8px;
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.plan--highlighted {
+    background: #19b84c;
+    color: white;
+    /* Used to define a shadow either outside or inside
+    First is the shadow on the X axis, the second is on the Y axis. Third is the blurriness, the fourth
+    is the spread beyond the borders. Finally the color.
+    A color can be defined with a color function. rgba() allows to set the color channels and opacity.
+    */
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.plan__annotation {
+    background: white;
+    color: #19b84c;
+    padding: 5px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.plan__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.plan__feature {
+    margin: 8px 0;
+}
+
+.plan__title {
+    color: #0e4f1f;
+}
+
+.plan__price {
+    color: #858585;
+}
+
+.plan--highlighted .plan__price {
+    color: #0e4f1f;
+}
+
+.plan--highlighted .plan__title {
+    color: white;
+}
+
+.button {
+    background: #0e4f1f;
+    color: white;
+    font: inherit; /* To force inheritance instead of the browser overwriting the fonts. */
+    border: 2px solid #0e4f1f;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+    background: white;
+    color: #0e4f1f;
 }
