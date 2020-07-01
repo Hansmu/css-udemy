@@ -1,1 +1,56 @@
+main {
+    padding-top: 32px;
+}
 
+.package {
+    border: 2px solid #0e4f1f;
+    border-left: none;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.package:hover,
+.package:active {
+    border: 2px solid #ffcede;
+}
+
+.package a {
+    text-decoration: none;
+    color: inherit;
+    padding: 32px;
+    display: block;
+}
+
+.package__sub-title {
+    color: #979797;
+}
+
+.package__description {
+    border: 2px solid #0e4f1f;
+    background: white;
+    color: #0e4f1f;
+    padding: 16px;
+    font-size: 20px;
+}
+
+#plus {
+    background: rgba(213, 255, 220, 0.95);
+}
+
+#free {
+    background: rgba(234, 252, 237, 0.95);
+}
+
+#premium {
+    background: rgba(14, 79, 31, 0.95);
+}
+
+#premium .package__title {
+    color: white;
+}
+
+#premium .package__sub-title {
+    color: #bbb;
+}
