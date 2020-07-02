@@ -196,3 +196,18 @@ applied in between the border and margin. */
     outline: none;
 }
 
+/* Positioning elements
+The default behavior of elements is caused by the fact that they have position: static set on them.
+You have to define where the element goes if you remove the static property from them and use something else.
+top, right, bottom, left properties can be used to position the element once it's not static anymore.
+
+When you set position to be fixed, then the element won't be occupying space where it used to before and
+another element will take up its space, thus it is removed from the document flow. The element will then
+start behaving like an inline-block element, regardless if it was an inline or a block element before.
+The positioning of this element then only depends on the viewport. So if you set the top position to be 0,
+then it will be sticking to the very top of the page.
+*/
+.main-header {
+    position: fixed;
+    width: 100%;
+}

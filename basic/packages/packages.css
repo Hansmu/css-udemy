@@ -77,3 +77,17 @@ Everything that comes after this class will not respect previous floats.
 .clearfix {
     clear: both;
 }
+
+/* All of our elements have a default z-index. It's set to auto and generally auto defaults to 0.
+If you want to change the z-index, then you have to apply the position property. The z-index can also
+be negative. So since we want our background image to be underneath all of the other elements, then
+we should apply a minus z-index.*/
+.background {
+    background: url('../images/plans-background.jpg');
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
