@@ -105,7 +105,21 @@ that child will still be underneath the other non-static position element, as it
 would only apply in the context of that parent.
 */
 .background {
+    /*Background is actually just a shorthand. More things can be defined for the background.*/
     background: url('../images/plans-background.jpg');
+    background-repeat: no-repeat;
+    /*The cover property decides which property to use - width or height, depending on which is larger.
+    It then decides which to use to fill the area, either width 100% or height 100%. It even zooms in
+    if the element is smaller than your container. cover is the best option to make sure that there is
+    no whitespace.
+
+    An alternative could be contain, which makes sure that the entire image is in the container. So nothing
+    would get cropped based on which dimension is higher. You'll most likely get whitespace with this.*/
+    background-size: cover;
+    /* The background position property works different based on the unit that you use. If you use pixels,
+    then it gets pushed from that edge by the number of pixels, causing whitespace.
+    If you use percentages, then*/
+    background-position: 10px;
     width: 100%;
     height: 100%;
     position: fixed;

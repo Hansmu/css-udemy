@@ -15,6 +15,7 @@ There are different types of selectors.
     width: 100%;
     height: 528px;
     padding: 10px;
+    margin-top: 42px;
     /*!**/
     /*The padding gets added around the margin of the h1 tag.*/
     /*This is because the content of the element is considered the content + any margins it might have.*/
