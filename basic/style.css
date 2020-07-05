@@ -16,6 +16,12 @@ There are different types of selectors.
     height: 528px;
     padding: 10px;
     margin-top: 42px;
+    /*background-clip: border-box; As our image overflowed, then the top and bottom
+    had the content underneath the borders. This property defines where the
+    image gets clipped. This property actually overrides background-origin. */
+    /*background-origin: border-box; /* can be used to define that the border
+    should be included on the image, not be around it. The default value is
+    padding-box, which means that the content and padding are included. */
     /*!**/
     /*The padding gets added around the margin of the h1 tag.*/
     /*This is because the content of the element is considered the content + any margins it might have.*/
