@@ -6,7 +6,15 @@ main {
 For absolute and fixed position values, the element is taken out of the document flow. With relative, however,
 it still remains in the document flow, except you can still apply top, right etc. to it. With relative the
 movement properties move them from the element's initial position. It can happen that you exit the parent
-element when using this.
+element when using this. If you'd add overflow: hidden; then the element could be hidden away once it goes
+out of bounds from the parent.
+If you'd add the overflow hidden to the body element, then that wouldn't work. This is because the property
+would be sent to the html tag and it has no effect there. However, you have overflow: hidden on both the
+html and body element, then it works. Could also just have auto on the html element.
+position:sticky is a hybrid of relative and fixed. When defining a top property, then it would define how
+large does the space have to be between the top of the viewport and the border of the element before it
+turns into a fixed element. When scrolling, then it gets limited by the parent. It doesn't extend over
+the parent component.
 */
 .package {
     border: 2px solid #0e4f1f;
@@ -88,7 +96,14 @@ Everything that comes after this class will not respect previous floats.
 /* All of our elements have a default z-index. It's set to auto and generally auto defaults to 0.
 If you want to change the z-index, then you have to apply the position property. The z-index can also
 be negative. So since we want our background image to be underneath all of the other elements, then
-we should apply a minus z-index.*/
+we should apply a minus z-index.
+When using a non-static position, then each element has their own stacking context within them.
+That means that the elements within a non-static position element compete only with the
+other children of that parent when using z-index. If the parent has a lower z-index than non-static position
+element, but the child has a higher one than the other non-static position element, then
+that child will still be underneath the other non-static position element, as its z-index
+would only apply in the context of that parent.
+*/
 .background {
     background: url('../images/plans-background.jpg');
     width: 100%;
