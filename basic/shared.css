@@ -47,6 +47,26 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
+
+    /* height: 22px; This will not work in resizing the image, as this is the container.
+    If you use an image tag that points to an image, then the default behaviour is that
+    the height and width of the image will be used, regardless of the size of the parent
+    element.
+    */
+
+    height: 22px;
+    display: inline-block;
+}
+
+.main-header__brand img {
+    /*height: 22px;*/
+    /* height: 100%; Does not work here, because it's cause it to use the height of the original image.
+    However, if setting the surrounding element to be an inline-block element, then a percentage works.*/
+
+    /* There isn't much more styling that we can do when using <img> tags. If you want to do more complex
+    styling, then use a background image. That is cover and the likes. Borders and such can still be set.
+    The downside is that it's worse for accessibility because it doesn't have its own specific element. */
+    height: 100%;
 }
 
 .main-nav {
