@@ -233,3 +233,56 @@ then it will be sticking to the very top of the page.
     top: 0;
     z-index: 1;
 }
+
+/* UNITS
+There's a default font size to elements that the browser applies. If the user changes the browser defaults,
+then those elements change. However, the elements that we have defined a font size for do not change. So
+half of the page gets resized and the other doesn't. There are different size definitions, which could be
+grouped into sections.
+ The sections are as follows:
+     * Absolute lengths - Mostly ignore user settings. Examples are px, cm, mm. Cm etc should not be used as they're
+     for paper, not for web development. The different displays measure differently in cms.
+         * pixels (px) - pixels are not relative to anything, only its own defined pixels.
+
+     * Viewport lengths - adjust to current viewport. Examples are vh, vw, vmin, vmax. The viewport is the
+     visible part in our browser.
+         * viewport height (vh) -
+         * viewport width (vw) -
+
+     * Font-relative lengths - adjust to default font size. Examples are rem, em and more. Rem and em are
+     pretty much the default ones to use.
+         * root em (rem) -
+         * em (em) -
+
+     * Percentages - there are 3 rules to remember.
+      - A fixed position element percentages are related to the viewport.
+      - Absolute element's percentage refers to the ancestor's content + padding size. An ancestor is the closest
+      parent element to the absolute, within its hieararhcy, that is not positioned with static. If you do
+      not have one, then it uses the viewport, just as fixed does.
+      - A static/relative element uses an ancestor's content size. Does not include padding as with absolute.
+      In this case the ancestor is simply the closest element that's a block level element.
+         * percentages (%) -
+
+The units matter for the following properties:
+ * font-size;
+ * padding;
+ * border;
+ * margin;
+ * width;
+ * height;
+ * top;
+ * bottom;
+ * left;
+ * right;
+*/
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
