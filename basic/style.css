@@ -39,8 +39,8 @@ There are different types of selectors.
             #ff1b68;
     width: 100%;
     height: 528px;
-    padding: 10px;
-    margin-top: 42px;
+    padding: 0.6rem;
+    margin-top: 2.6rem;
     /*background-clip: border-box; As our image overflowed, then the top and bottom
     had the content underneath the borders. This property defines where the
     image gets clipped. This property actually overrides background-origin. */
@@ -124,8 +124,8 @@ There are however more combinators
 .plan {
     background: #d5ffdc;
     text-align: center;
-    padding: 16px;
-    margin: 8px;
+    padding: 1rem;
+    margin: 0.5rem;
     display: inline-block;
     width: 30%;
     vertical-align: middle;
@@ -179,13 +179,13 @@ There are however more combinators
 
 #key-features {
     background: #ff1b68;
-    margin-top: 80px;
-    padding: 16px;
+    margin-top: 5rem;
+    padding: 2rem;
 }
 
 #key-features .section-title {
     color: white;
-    margin: 32px;
+    margin: 2rem;
 }
 
 .key-features__list {
@@ -204,7 +204,7 @@ There are however more combinators
 .key-feature__description {
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .key-feature__image {
@@ -216,5 +216,5 @@ There are however more combinators
     border-radius: 50%;
     /* Centers the element horizontally. */
     margin: auto;
-    padding: 20px;
+    padding: 1.25rem;
 }

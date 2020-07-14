@@ -33,7 +33,7 @@ body {
 
 .main-header {
     background: #2ddf5c;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
 }
 
 .main-header > div {
@@ -46,7 +46,7 @@ body {
     color: #0e4f1f;
     text-decoration: none;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 1.5rem;
 
     /* height: 22px; This will not work in resizing the image, as this is the container.
     If you use an image tag that points to an image, then the default behaviour is that
@@ -102,7 +102,7 @@ it will not push away elements above or below it.
 */
 .main-nav__item {
     display: inline-block;
-    margin: 0 16px;
+    margin: 0 1rem;
 }
 
 /* A separate class would have a higher performance, but in most cases you wouldn't even notice the difference. */
@@ -149,7 +149,7 @@ the CSS file does matter, because they have the same specifity.
 .main-nav__item--cta a {
     color: white;
     background: #ff1b68;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
 }
 
@@ -166,8 +166,8 @@ it'll still use the existing properties from the other class.
 
 .main-footer {
     background: black;
-    padding: 32px;
-    margin-top: 48px;
+    padding: 2rem;
+    margin-top: 3rem;
 }
 
 .main-footer__links {
@@ -179,7 +179,7 @@ it'll still use the existing properties from the other class.
 
 .main-footer__link {
     display: inline-block;
-    margin: 0 16px;
+    margin: 0 2rem;
 }
 
 .main-footer__link a {
@@ -198,7 +198,7 @@ it'll still use the existing properties from the other class.
     color: white;
     font: inherit; /* To force inheritance instead of the browser overwriting the fonts. */
     border: 2px solid #0e4f1f;
-    padding: 8px;
+    padding: 0.5rem;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
@@ -251,8 +251,11 @@ grouped into sections.
 
      * Font-relative lengths - adjust to default font size. Examples are rem, em and more. Rem and em are
      pretty much the default ones to use.
-         * root em (rem) -
-         * em (em) -
+         * root em (rem) - this means that it will take the browser defined font and multiplies it with its
+         multiplier. It's dependent on the root font size value, so the HTML element.
+         * em (em) - this uses the font size of the parent and does it relative to that. The problem is that
+         this can become a mess. It isn't the best thing to use, but it has its use cases. Just have to be
+         careful when using it.
 
      * Percentages - there are 3 rules to remember.
       - A fixed position element percentages are related to the viewport.
