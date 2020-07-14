@@ -216,4 +216,5 @@ There are however more combinators
     border-radius: 50%;
     /* Centers the element horizontally. */
     margin: auto;
+    padding: 20px;
 }
