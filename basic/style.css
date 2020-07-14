@@ -11,7 +11,22 @@ There are different types of selectors.
 
 #product-overview {
     /*The URL reference to a file can be to a local file or to one online.*/
-    background: url("./freedom.jpg");
+    /*background: url("./freedom.jpg");*/
+    /* Gradients are treated as images, so it has to be added with similar properties
+        The direction can be defined using words 'to left bottom' or degrees '30deg'.
+        Can also include transparent and an X amount of colors. Additionally you can define
+        where one color starts and the other begins. The percentage defines at which height
+        it starts.
+    */
+    /*background-image: linear-gradient(180deg, red 70%, blue 80%, rgba(0, 0, 0, 0.5));*/
+    /* The radial gradient allows defining a gradient in a certain shape, unlike linear, which is, well,
+     linear. The default is an oval, but you can define a different shape. You can also define the center
+     of the gradient with 'at'. The center is the same as the starting position. You can define the starting
+     position by using words or percentages for specific control. You can also define the size of the center
+     by adding pixels after the shape definition `circle 20px 30px at ...`. There's also keywords that can
+     be used instead of the pixels like ´farthest-corner`
+     */
+    /*background-image: radial-gradient(circle at 20% 50%, red, blue);*/
     width: 100%;
     height: 528px;
     padding: 10px;
