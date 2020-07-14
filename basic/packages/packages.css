@@ -107,6 +107,9 @@ would only apply in the context of that parent.
 .background {
     /*Background is actually just a shorthand. More things can be defined for the background.*/
     background: url('../images/plans-background.jpg');
+    /* Filters are a way of changing the look of the element. For example you could blur the pixels.
+    There are a lot of options. More than one filter can be applied. IE does not support filter.*/
+    filter: grayscale(40%);
     background-repeat: no-repeat;
     /*The cover property decides which property to use - width or height, depending on which is larger.
     It then decides which to use to fill the area, either width 100% or height 100%. It even zooms in
