@@ -123,8 +123,8 @@ would only apply in the context of that parent.
     then it gets pushed from that edge by the number of pixels, causing whitespace.
     If you use percentages, then*/
     background-position: 10px;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
