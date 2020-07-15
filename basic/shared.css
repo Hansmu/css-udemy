@@ -47,6 +47,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.5rem;
+    vertical-align: middle;
 
     /* height: 22px; This will not work in resizing the image, as this is the container.
     If you use an image tag that points to an image, then the default behaviour is that
@@ -77,7 +78,7 @@ body {
     Taking the exact size of the element won't work either, as a new line in our editor will add a new inline element with
     the content being a space. So we need to subtract a little bit extra. A hacky solution and a better solution will follow.
     */
-    width: calc(100% - 67px);
+    width: calc(100% - 122px);
     vertical-align: middle;
 }
 
@@ -106,7 +107,8 @@ it will not push away elements above or below it.
 }
 
 /* A separate class would have a higher performance, but in most cases you wouldn't even notice the difference. */
-.main-nav__item a {
+.main-nav__item a,
+.mobile-nav__item a{
     color: #0e4f1f;
     /* Wouldn't work when setting on the parent, as everything that targets an element directly has a higher priority then
      inheritance.*/
@@ -146,7 +148,8 @@ a:not(.active) {
 As we want to override the styles applied by another rule, then the order in which they are defined in
 the CSS file does matter, because they have the same specifity.
 */
-.main-nav__item--cta a {
+.main-nav__item--cta a,
+.mobile-nav__item--cta a {
     color: white;
     background: #ff1b68;
     padding: 0.5rem 1rem;
@@ -158,7 +161,9 @@ As we don't want any of the original styling, then we have to overwrite all of t
 it'll still use the existing properties from the other class.
 */
 .main-nav__item--cta a:hover,
-.main-nav__item--cta a:active {
+.main-nav__item--cta a:active,
+.mobile-nav__item--cta a:hover,
+.mobile-nav__item--cta a:active {
     background: white;
     color: #ff1b68;
     border-bottom: none;
@@ -354,4 +359,54 @@ top, bottom, left, right    |   %
 .modal__action--negative:active {
     background: #ff5454;
     border-color: #ff5454;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    background: white;
+    width: 80%;
+    height: 100vh;
+}
+
+.mobile-nav__items {
+    width: 90%;
+    height: 100%;
+    list-style: none;
+    margin: 10% auto;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-nav__item {
+    margin: 1rem 0;
+}
+
+.mobile-nav__item a {
+    font-size: 1.5rem;
+}
+
+.toggle-button {
+    width: 3rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.toggle-button__bar {
+    width: 100%;
+    height: 0.2rem;
+    background: black;
+    display: block;
+    margin: 0.6rem 0;
 }
