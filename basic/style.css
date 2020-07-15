@@ -117,6 +117,7 @@ There are however more combinators
 
 .plan__list {
     width: 80%;
+    /* "margin: auto" only works for block level elements with an explicitly assigned width. */
     margin: auto;
     text-align: center;
 }
