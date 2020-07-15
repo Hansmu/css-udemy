@@ -246,8 +246,10 @@ grouped into sections.
 
      * Viewport lengths - adjust to current viewport. Examples are vh, vw, vmin, vmax. The viewport is the
      visible part in our browser.
-         * viewport height (vh) -
-         * viewport width (vw) -
+         * viewport height (vh) - specifies how much of the viewport height is taken up by this element in
+         terms of percentages.
+         * viewport width (vw) - specifies how much of the viewport width is taken up by this element in
+         terms of percentages.
 
      * Font-relative lengths - adjust to default font size. Examples are rem, em and more. Rem and em are
      pretty much the default ones to use.
@@ -283,8 +285,11 @@ The units matter for the following properties:
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    /* In the case of fixed 100% and vh don't make a difference.
+    vmin - it uses the smaller dimension of viewport width and height. vmax does the opposite.
+    */
+    width: 100vw;
+    height: 100vh;
     z-index: 100;
     background: rgba(0, 0, 0, 0.5);
     display: none;
