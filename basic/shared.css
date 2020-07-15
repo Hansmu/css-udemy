@@ -281,6 +281,18 @@ The units matter for the following properties:
  * right;
 */
 
+/* Which unit should you choose? It's not really a rule that's set in stone, but what's worked for the
+lecturer.
+Property                    | "Recommended" unit
+----------------------------|----------------------------------------------
+font-size (root element)    |   %; none;
+font-size                   |   rem (em => Children only, don't chain it)
+padding, margin             |   rem
+border                      |   px
+width, height               |   %; vw/vh
+top, bottom, left, right    |   %
+*/
+
 .backdrop {
     position: fixed;
     top: 0;
