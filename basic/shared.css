@@ -414,3 +414,7 @@ top, bottom, left, right    |   %
 .open {
     display: initial !important;
 }
+
+/* For mobile design we first need to use the viewport metatag to tell the browser to use CSS pixels, not hardware pixels.
+Then we can use media queries to size our website based on screen sizes.
+*/

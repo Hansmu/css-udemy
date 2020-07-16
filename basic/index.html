@@ -4,6 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+        Used to make sure that the device would use software pixels, not hardware pixels.
+        The name tag says that it should target our viewport.
+        width=device-width says that the pixel ration conversion should be applied.
+        initial-scale=1.0 says that no zoom should be applied. Can change it to ex. 1.5, then the website would be zoomed in.
+        There are additional properties that can be applied, but this is the baseline. For example maximum-scale, minimum-scale
+        to define how much the user can zoom in or out.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>uHost</title>
     <link rel="shortcut icon" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Anton" rel="stylesheet">
