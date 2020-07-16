@@ -82,6 +82,40 @@ There are different types of selectors.
     */
 }
 
+/*
+min-width - if our device size is equal or greater than 40rem, then this media query will kick in.
+max-width - if our device size is equal or less than 40rem, then this media query will kick in.
+*/
+@media (min-width: 40rem) {
+    #product-overview {
+        height: 40vh;
+        background-position: 50% 25%;
+    }
+
+    #product-overview h1 {
+        font-size: 3rem;
+    }
+}
+
+/* The order matters. If the smaller size is below the larger one, then the larger one will overwrite the smaller rules.
+ So start with the smallest query first in a CSS file.
+ */
+@media (min-width: 60rem) {
+    #product-overview {
+        height: 60vh;
+        background-position: 50% 25%;
+    }
+
+    #product-overview h1 {
+        font-size: 5rem;
+    }
+}
+
+.section-title {
+    color: #2ddf5c;
+    text-align: center;
+}
+
 /* Space separated selector does not mean direct child but any depth child. */
 /*
 There are however more combinators
@@ -108,11 +142,6 @@ There are however more combinators
     tag would use inheritance over the specific rule. A better way might be to use an id or a combinator.
     A combinator allows to combine multiple selectors.
     */
-}
-
-.section-title {
-    color: #2ddf5c;
-    text-align: center;
 }
 
 .plan__list {
