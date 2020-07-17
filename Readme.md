@@ -72,3 +72,7 @@ to our HTML. `<meta name="viewport" content="width=device-width, initial-scale=1
 
 A lot of places are designing websites mobile first nowadays. That is first they check that the
 website fits the mobile device and then that it fits desktop.
+
+If you're trying to decide what breakpoints to target, then you can take a look at the most common
+devices and use the breakpoints from there. When adding media queries, they usually go to the bottom
+of the CSS files so they'd be easier to find.

@@ -146,3 +146,22 @@ would be the closest parent with the position defined.
     background: #ff5454;
     padding: 0.5rem;
 }
+
+@media (min-width: 40rem) {
+    main {
+        margin: 3rem auto;
+        max-width: 1500px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .package {
+        border-left: 4px solid #0e4f1f;
+    }
+
+    #free {
+        border-right: 4px solid #0e4f1f;
+    }
+
+
+}
