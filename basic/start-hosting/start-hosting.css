@@ -8,11 +8,20 @@ main {
     color: #ff5454;
 }
 
+.signup-form {
+    padding: 1rem;
+}
+
+.signup-form label {
+    font-weight: bold;
+}
+
 .signup-form label,
 .signup-form input,
 .signup-form select {
     display: block;
     margin-top: 1rem;
+    width: 100%;
 }
 
 /* [type] can be used to select an element with a specific attribute <input type="text"/>.
@@ -29,3 +38,21 @@ An element that contains a value.
 Check values case-insensitively
 [src*="cdn" i] {} <img src="i.CDN.com">
 */
+
+.signup-form input[type="checkbox"],
+.signup-form input[type="checkbox"] + label{
+    display: inline-block;
+    width: auto;
+}
+
+.signup-form button[type="submit"] {
+    display: block;
+    margin-top: 1rem;
+}
+
+@media (min-width: 40rem) {
+    .signup-form {
+        margin: auto;
+        width: 25rem;
+    }
+}
