@@ -14,3 +14,18 @@ main {
     display: block;
     margin-top: 1rem;
 }
+
+/* [type] can be used to select an element with a specific attribute <input type="text"/>.
+You can also select ones with a specific attribute value. [type="email"] {} <input type="email"/>.
+You could also select an element that has a certain value among several. [lang~="en-us"] {} <p lang="en-us en-gb"></p>
+An element with a specific attribute value or it as a prefix. It has to be followed by a dash if it's a prefix.
+[lang|="en"] {} <p lang="en-us">Hi!</p>
+An element with a specific attribute value prefix. It's more flexible than the one with the pipe.
+[href^="#"] {} <a href="#all"></a>
+An element with a specific attribute value suffix.
+[href$=".de"] {} <a href="ab.de"></a>
+An element that contains a value.
+[src*="cdn"] {} <img src="i.cdn.com">
+Check values case-insensitively
+[src*="cdn" i] {} <img src="i.CDN.com">
+*/
