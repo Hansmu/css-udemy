@@ -91,6 +91,18 @@ Check values case-insensitively
     border: #0e4f1f;
 }
 
+.signup-form input.invalid, /* This is the manual approach, but there's also a pseudo selector. */
+.signup-form select.invalid,
+/* This would be triggered on the email, as the browser would automatically try to validate the
+ type email element.
+ The invalid selector has a lower priority than the not that we have above, so this overwrites that.
+ As this is a temporary util class, then important is a valid use case here.
+ */
+.signup-form :invalid { /* There's also a :valid pseudoselector */
+    border-color: red !important;
+    background: #faacac;
+}
+
 @media (min-width: 40rem) {
     .signup-form {
         margin: auto;
