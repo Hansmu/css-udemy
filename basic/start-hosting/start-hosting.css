@@ -24,6 +24,26 @@ main {
     width: 100%;
 }
 
+.signup-form input,
+.signup-form select {
+    border: 1px solid #ccc;
+    padding: 0.2rem 0.5rem;
+    /* By default the browser sets the font itself. As we want the inputs to have the same font as the rest,
+    then we set it to inherit. */
+    font: inherit;
+}
+
+/*
+When you look at the input element focused, then there's an outline. An outline isn't exactly a border.
+An outline always comes after the border, but isn't part of the box model.
+*/
+.signup-form input:focus,
+.signup-form select:focus {
+    outline: none;
+    background: #d8f3df;
+    border-color: #2ddf5c;
+}
+
 /* [type] can be used to select an element with a specific attribute <input type="text"/>.
 You can also select ones with a specific attribute value. [type="email"] {} <input type="email"/>.
 You could also select an element that has a certain value among several. [lang~="en-us"] {} <p lang="en-us en-gb"></p>
