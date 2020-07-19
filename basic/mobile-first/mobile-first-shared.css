@@ -1,7 +1,10 @@
 /* It's better to import the fonts in a CSS file, as there's a lower chance that people will forget
  to import the CSS file, rather than the font link in the HTML file. You'd have one central location where
- they are imported then as well. */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+ they are imported then as well. We need to specify the different weights that we want to import specifically.
+ If we don't specify weights, then we just get the normal font weight, which is 400. If you want italic
+ and what not, then you'd have to add 400i. The browser can apply an italic style on its own, but it won't
+ look exactly like on the example font page. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 
 body {
     /* You start with the most specific thing you have. You can have multiple fallbacks with the specific

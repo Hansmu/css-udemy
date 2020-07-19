@@ -1,3 +1,23 @@
+/* We can use @font-face to import a local file for a font.
+The negative thing is that we have to create a separate import for bold,
+italic etc.*/
+@font-face {
+    /* First we define what name the font family will be called with. */
+    font-family: 'AnonymousPro';
+    /* Then we have to define where we can find the font. As always,
+    there can be issues with IE. This can happen when you have the
+    file name capitalized. In order to avoid that, then the font file
+    should start with a lower-case letter. Keeping it as upper right now,
+    though, as it's just a tutorial. */
+    src: url("AnonymousPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'AnonymousPro';
+    src: url("AnonymousPro-Bold.ttf");
+    font-weight: 700;
+}
+
 main {
     padding-top: 2rem;
 }
@@ -50,7 +70,12 @@ the parent component.
     color: #0e4f1f;
     padding: 1rem;
     font-size: 1.25rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'AnonymousPro', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    /*!* normal = 400, bold = 700*/
+    /* The larger the value, the thicker it is. The smaller, the thinner.*/
+    /* *!*/
+    /*font-weight: 900;*/
 }
 
 #plus {
