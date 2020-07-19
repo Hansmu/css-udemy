@@ -14,6 +14,15 @@ italic etc.*/
 
 @font-face {
     font-family: 'AnonymousPro';
+    /* We're using the true type format here. Most browser support it, but as usual, IE has partial support.
+    WOFF is something that is supported even in IE, though. The URLs can have a number of imports as well
+     src: url("AnonymousPro-Bold.woff2") format("woff2"),
+         url("AnonymousPro-Bold.woff") format("woff"),
+         url("AnonymousPro-Bold.ttf") format("truetype");
+
+     There are other font types as well, but there's no point in using them as support for the rest are
+     very limited.
+     */
     src: url("AnonymousPro-Bold.ttf");
     font-weight: 700;
 }
