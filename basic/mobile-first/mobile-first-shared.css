@@ -1,5 +1,7 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+    /* You start with the most specific thing you have. You can have multiple fallbacks with the specific
+     font families as well.*/
+    font-family: 'Montserrat', 'Verdana', sans-serif;
     margin: 0;
 }
 
