@@ -50,6 +50,7 @@ the parent component.
     color: #0e4f1f;
     padding: 1rem;
     font-size: 1.25rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 #plus {
