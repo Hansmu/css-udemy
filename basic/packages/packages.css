@@ -85,6 +85,21 @@ the parent component.
     /* The larger the value, the thicker it is. The smaller, the thinner.*/
     /* *!*/
     /*font-weight: 900;*/
+
+    /* Some examples of font properties:
+        * font-size to define the size
+        * font-variant to define character transformations. E.g small characters to caps.
+        * font-stretch to define different ways how to stretch the text. It's not supported too much by
+        created fonts. The browser support is good, though.
+        * letter-spacing can be used to add space between your letters.
+        * white-space can be used to define how whitespaces are treated inside of our elements.
+    */
+
+    /* By default the line height depends on the font family that we are using. If we use normal, then
+     it defaults to the font family line height. However, if we add an integer, then it relates to the
+     font size. So font-size * line-height. However, we can use units as well. A regular integer is better
+     though, because then it depends on the base font size. Helps with accessibility as well. */
+    line-height: 1.5;
 }
 
 #plus {
