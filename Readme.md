@@ -76,3 +76,29 @@ website fits the mobile device and then that it fits desktop.
 If you're trying to decide what breakpoints to target, then you can take a look at the most common
 devices and use the breakpoints from there. When adding media queries, they usually go to the bottom
 of the CSS files so they'd be easier to find.
+
+### Fonts
+There are generic font families, that include specific fonts within them. Generic families define what
+kind of styles can be found within them. A serif is a small line or stroke regularly attached to the end
+of a larger stroke in a letter or a symbol. So serifs are font families that include a serif style. A
+sans-serif is the opposite of that. Cursive is families that include cursive. Monospace is a font where
+each character occupies the same amount of horizontal space.
+
+So every generic font family defines what kind of feature they have. Each of those generic families then
+have their specific implementations. Basically a generic font family is an interface and a font is an
+implementation.
+
+| Generic Families     | Specific font examples |
+| --------------- | ----------- |
+| serif      | Times New Roman; Georgia       |
+| sans-serif   | Helvetica; Verdana        |
+| cursive   | Brush Script; Mistral        |
+| monospace   | Courier New; Lucida Bright        |
+| fantasy (uncommon)   |         |
+
+The browser has a default font that it will display. If we do not specify a specific font, then the default
+one will be displayed. Alternatively, we could define a generic family to make sure the browser uses that 
+type of style. The user can define whatever font they want for those generic families, though. So if we
+state sans-serif, that does not mean that we're going to get the same look on every device as the specific
+fonts used for those families can be overwritten in the options. Finally, we can define a specific font
+family. This would make sure that our fonts would look the same on all browsers.
