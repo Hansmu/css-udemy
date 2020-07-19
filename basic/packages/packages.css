@@ -12,6 +12,32 @@ italic etc.*/
     src: url("AnonymousPro-Regular.ttf");
 }
 
+/* Fonts can get pretty big and loading them can become slow. There is a way to optimize them by using
+the font-display property. It's a property that's applied to @font-face blocks.
+The possible values for it are swap; block; fallback; optional and by default it gets set to auto.
+There are two phases to loading a font.
+1) block-period - in this section there will be no font displayed, but the blocks would be reserved.
+That is, the height of the area would be reserved, but there's nothing in it. Only invisible text.
+If there is no block period, then the fallback font would be immediately visible. So a fallback comes
+after the block period.
+2) swap-period - where the browser can swap the fallback fonts for the actual fonts.
+
+So with the defined values, the following behaviours can happen.
+With swap it does not have a block-period and tries to swap out the fallback once the font
+gets loaded.
+With block there's a short block period and the swap happens when the browser manages to finish
+loading the font.
+With fallback there's a very short block period and then a short swap period. So there's a small window
+where the browser has a chance to load our custom font. If it manages in the small period, then it will be
+used, otherwise it's not used.
+With optional there's a very short block period. There's no swap period. The browser decides based on our
+connection speed if it would load the custom font or the fallback.
+With auto most browsers choose block.
+
+As always, there's no IE support for this property. But also there are some other browsers that don't
+support it.
+*/
+
 @font-face {
     font-family: 'AnonymousPro';
     /* We're using the true type format here. Most browser support it, but as usual, IE has partial support.
