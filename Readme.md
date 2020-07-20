@@ -114,3 +114,24 @@ For the container we can add then `flex-flow`, `justify-content`,
 `align-content`, `align-items` properties.
 
 For the children we can apply `order`, `flex`, `align-self`.
+
+The Flex items have a main axis and a cross axis.
+They both have the same starting point, but they're perpendicular
+to each other.
+
+If our flex-direction is row, then the main axis starts
+from the left top corner and goes to the top right. The cross
+axis then also starts from the top left, but goes to the bottom left.
+ 
+Row reverse makes it reverse. Starts from the top right, with the
+main axis going to the top left and the cross axis going to the bottom
+right.
+
+With column, the main and cross axis change their orders. They
+still start from the top left, but the main axis then
+heads towards the bottom left, while the cross axis heads towards
+the top right.
+
+With column-reverse, their starting positions are from the
+bottom left, with the main axis heading towards the top left
+and the cross axis heading towards the bottom right.
