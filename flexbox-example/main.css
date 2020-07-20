@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+}
+
+/*
+As soon as we apply flex, then we can see that the child elements get put into a single row.
+The height of the row is defined by the tallest item. Once the container gets smaller than the
+elements, then overflow starts happening as usual. So it acts like a regular block level element.
+*/
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+    /*inline-flex makes it behave like an inline element. So it takes up the amount of space that
+    is required by the children and it doesn't resize on window size change.*/
+    display: flex;
+    /* Whenever you apply display flex, then two additional properties get automatically applied -
+     flex-direction, with a default value of row and flex-wrap, with a default value of nowrap.*/
+    /* column would put them into a column. Can reverse them by adding row-reverse, column-reverse. */
+    flex-direction: column;
+    /* With wrap as the size of the window decreases, then the elements jump into a new row as room
+     runs out. Additionally, on the new row, they take up the amount of space that the tallest item
+     wants on that specific row. So if a fixed height element stays on the previous row, then the
+     next row will be shorter, based on the tallest element in that row.
+     Thus each flex row height depends on the highest element within that row.*/
+    /* wrap-reverse sends the overflowing elements to a new row at the start, instead of creating
+     a new row at the end. Additionally, the fixed height elements that are smaller than the tallest
+     element in the row will get aligned to the bottom of that row, instead of the top.*/
+    flex-wrap: wrap;
+}
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}

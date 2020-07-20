@@ -102,3 +102,15 @@ type of style. The user can define whatever font they want for those generic fam
 state sans-serif, that does not mean that we're going to get the same look on every device as the specific
 fonts used for those families can be overwritten in the options. Finally, we can define a specific font
 family. This would make sure that our fonts would look the same on all browsers.
+
+
+### Flexbox
+The first thing that we need is the flex container. We can
+use the `display: flex;` property to define a parent which
+is a Flex container. Then we insert Flex items
+into it.
+
+For the container we can add then `flex-flow`, `justify-content`,
+`align-content`, `align-items` properties.
+
+For the children we can apply `order`, `flex`, `align-self`.
