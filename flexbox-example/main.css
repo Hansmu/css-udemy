@@ -23,12 +23,15 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
     background: white;
     padding: 10px;
     border: 5px solid black;
+    height: 800px;
     /*inline-flex makes it behave like an inline element. So it takes up the amount of space that
     is required by the children and it doesn't resize on window size change.*/
     display: flex;
     /* Whenever you apply display flex, then two additional properties get automatically applied -
      flex-direction, with a default value of row and flex-wrap, with a default value of nowrap.*/
-    /* column would put them into a column. Can reverse them by adding row-reverse, column-reverse. */
+    /* column would put them into a column. It would also separate them into separate columsn, provided
+    that the surrounding container has a fixed height.
+    Can reverse them by adding row-reverse, column-reverse. */
     flex-direction: column;
     /* With wrap as the size of the window decreases, then the elements jump into a new row as room
      runs out. Additionally, on the new row, they take up the amount of space that the tallest item
@@ -39,6 +42,20 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
      a new row at the end. Additionally, the fixed height elements that are smaller than the tallest
      element in the row will get aligned to the bottom of that row, instead of the top.*/
     flex-wrap: wrap;
+    /* flex-flow: row wrap; can be used as a shorthand */
+
+    /* stretch is the default value for align items. Stretch says that the other elements without
+    a defined height should be stretched to be as tall as the tallest element. When defining anything
+    else, then they only take up as much room as they need to.
+    The align items property states how to align the items on the cross axis.
+    When using center, then we say that our elements should be centered on the cross axis.
+    flex-start to align at the start of the cross axis.
+    flex-end to align at the end of the cross axis.
+    */
+    align-items: center;
+
+    /* justify-content can be used to align the elements along the main axis. */
+    justify-content: center;
 }
 
 .item-1 {
