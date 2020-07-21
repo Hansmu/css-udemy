@@ -32,7 +32,7 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
     /* column would put them into a column. It would also separate them into separate columsn, provided
     that the surrounding container has a fixed height.
     Can reverse them by adding row-reverse, column-reverse. */
-    flex-direction: column;
+    flex-direction: row;
     /* With wrap as the size of the window decreases, then the elements jump into a new row as room
      runs out. Additionally, on the new row, they take up the amount of space that the tallest item
      wants on that specific row. So if a fixed height element stays on the previous row, then the
@@ -44,7 +44,9 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
     flex-wrap: wrap;
     /* flex-flow: row wrap; can be used as a shorthand */
 
-    /* stretch is the default value for align items. Stretch says that the other elements without
+    /*
+    align-items property aligns the items in a certain way within the cross-axis row.
+    stretch is the default value for align items. Stretch says that the other elements without
     a defined height should be stretched to be as tall as the tallest element. When defining anything
     else, then they only take up as much room as they need to.
     The align items property states how to align the items on the cross axis.
@@ -56,6 +58,15 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
 
     /* justify-content can be used to align the elements along the main axis. */
     justify-content: center;
+
+     /*align-content is used to align the cross axis rows. The default is stretch, which means that
+      the rows will evenly distribute and take up all the space available. So with 3 rows, each row would
+      take up 33.33% of space.
+      align-content center would put all of the rows at the center of the screen. Instead of stretching, then
+      each row would be at the center and each row would take up only as much space as it needs. But the anchor
+      point for the rows would be the midpoint of the cross axis.+
+      */
+    align-content: center;
 }
 
 .item-1 {
