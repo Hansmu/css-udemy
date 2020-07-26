@@ -135,3 +135,5 @@ the top right.
 With column-reverse, their starting positions are from the
 bottom left, with the main axis heading towards the top left
 and the cross axis heading towards the bottom right.
+
+z-index works on Flexbox items.
