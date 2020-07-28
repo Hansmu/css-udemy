@@ -119,6 +119,16 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
     border: 5px solid black;
     margin: 10px;
     width: 350px;
+    /* Has an initial value of 0. It can be used to define how much of the remaining space should be
+     used up by the element. If it has flex-grow > 0 and no other element has flex-grow, then it will
+     use up all of the space that is unused. If more elements have flex-grow, then the sum of those
+     is taken. So for example 1 element has flex-grow 2, another has flex-grow 3, then the remaining
+     space is divided by 5 and 2 parts of it is given to 1 element, and 3 is given to another. That
+     applies if they're on the same line. However, if in such a situation the other element gets pushed
+     onto a new line, then the first element will occupy the remaining space on the first row and the
+     second element would occupy the remaining space on the second row. If it's alone on the second row,
+     then it'll take up all of the space. */
+    flex-grow: 0;
 }
 
 .item-6 {
