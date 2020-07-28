@@ -129,6 +129,11 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
      second element would occupy the remaining space on the second row. If it's alone on the second row,
      then it'll take up all of the space. */
     flex-grow: 0;
+
+    /* The default value is 1. If we set it to 0, then the item cannot become smaller than the defined
+    width that it has. The inverse calculation happens when compared to grow. If multiple ones have
+    shrink, then one is said to shrink faster than the other. */
+    flex-shrink: 1;
 }
 
 .item-6 {
