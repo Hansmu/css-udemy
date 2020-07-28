@@ -94,6 +94,8 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
     border: 5px solid black;
     margin: 10px;
     height: 250px;
+    /* Can apply the align properties to the item itself, instead of the entire row/column. */
+    align-self: center;
 }
 
 .item-4 {
