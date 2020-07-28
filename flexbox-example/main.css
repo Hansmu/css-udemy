@@ -134,6 +134,15 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
     width that it has. The inverse calculation happens when compared to grow. If multiple ones have
     shrink, then one is said to shrink faster than the other. */
     flex-shrink: 1;
+
+    /* It defines the size of the element. It is based on the flex direction. It isn't the width or the
+    height, it can be both. The flex-direction defines which it is. In the case of row, it defines the
+    width. The size is based on the main axis. In the case of row, tt overrides the defined width.
+    Need to disable shrinking to make it stay at 300 pixels. Can use different units here as well.
+    The opposite size height or width stays. The default value for flex-basis is auto. */
+    flex-basis: 300px;
+
+    /* flex: can be used to define grow, shrink and basis values. E.g. flex: 0 1 300px;*/
 }
 
 .item-6 {
