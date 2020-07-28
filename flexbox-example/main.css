@@ -104,6 +104,10 @@ elements, then overflow starts happening as usual. So it acts like a regular blo
     margin: 10px;
     width: 300px;
     height: 300px;
+    /* The default value for order is 0. If we want the element to be after the rest of the elements,
+    then we add 1. If we want it to be before, then we add -1. So the higher values go to the end and
+    the lower values go to the start. */
+    order: 0;
 }
 
 .item-5 {
