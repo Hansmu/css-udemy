@@ -2,12 +2,24 @@
     margin: 20px;
     /* Create a grid container. Only the direct children of that container are considered part of the grid.*/
     display: grid;
+
     /* Allows to overwrite the default 1 column that we have. Defines the width of the columns.
     A special unit that we can use inside of a grid is fr for fraction. It takes the remaining space and
     divides it between all the columns with the fr unit and separate it between them accordingly. */
-    grid-template-columns: 200px 2fr 20% 1fr;
-    /* To explicitly define rows. */
-    grid-template-rows: 5rem 2.5rem;
+    /*grid-template-columns: 200px 2fr 20% 1fr;*/
+
+    /* If you don't want to have such differently defined columns, but would rather want to have say
+     4 x 25% columns, then you could use another way. You could use a helper CSS method for that.
+     With repeat you define how many times you want to repeat something and then what you want to repeat.*/
+    grid-template-columns: repeat(4, 25%);
+
+    /* To explicitly define rows.
+    auto can be used to take up as much space as the content requires. If we define a height for the container,
+    then auto takes up as much space as is left. It takes up as much space as is left in the columns by default
+    if used there.*/
+    /* The minmax helper method can be used to define the maximum height that the element can have and the
+    minimum it should have. Could also use auto in there. */
+    grid-template-rows: 5rem minmax(10px, 200px);
 }
 
 .el1 {
