@@ -20,6 +20,16 @@
 
 .el3 {
     background: rgba(0, 128, 0, 0.5);
+    /* CSS grid thinks in terms of lines.  */
+    grid-column-start: 3;
+    /* By default it would span one cell, but we can tell it to span more. */
+    grid-column-end: 5;
+    grid-row-start: 1;
+    /* We set it to 3, as 2 marks the end of the first row. One row or cell has a line it starts from and
+     a line it ends on. Where it ends, another cell/row begins. So 1 marks the start of the first row and
+     2 marks the end of the first row and the start of the second one. If we'd set it to 2, then it'd only
+     run until the start of the second unit, thus not spanning it. So 3 marks the end of the second row.*/
+    grid-row-end: 3;
 }
 
 .el4 {
