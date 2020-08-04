@@ -19,7 +19,10 @@
     if used there.*/
     /* The minmax helper method can be used to define the maximum height that the element can have and the
     minimum it should have. Could also use auto in there. */
-    grid-template-rows: 5rem minmax(10px, 200px);
+    /*grid-template-rows: 5rem minmax(10px, 200px);*/
+
+    /* We can use numbers to refer to lines, but we could also name our lines. You can add multiple names.*/
+    grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(10px, 200px) [row-2-end row-3-start] 100px [row-3-end];
 }
 
 .el1 {
@@ -39,7 +42,9 @@
      same cell if you explicitly create such a situation. The grid tries to avoid this by default. The
      DOM order is important when deciding which one is on top. As element 3 comes after element 2, then it is
      on top. We can change this using z-index as the grid supports it. */
-    grid-row-start: 2;
+    /*grid-row-start: 2;*/
+    /* After naming we can refer to the lines using our named references. */
+    grid-row-start: row-2-start;
     grid-row-end: span 1; /* This is the default, so could technically be omitted. */
 }
 
