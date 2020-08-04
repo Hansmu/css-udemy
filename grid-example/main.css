@@ -1,5 +1,13 @@
 .container {
     margin: 20px;
+    /* Create a grid container. Only the direct children of that container are considered part of the grid.*/
+    display: grid;
+    /* Allows to overwrite the default 1 column that we have. Defines the width of the columns.
+    A special unit that we can use inside of a grid is fr for fraction. It takes the remaining space and
+    divides it between all the columns with the fr unit and separate it between them accordingly. */
+    grid-template-columns: 200px 2fr 20% 1fr;
+    /* To explicitly define rows. */
+    grid-template-rows: 5rem 2.5rem;
 }
 
 .el1 {
