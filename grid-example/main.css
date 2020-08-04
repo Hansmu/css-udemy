@@ -28,14 +28,32 @@
 
 .el2 {
     background: rgba(255, 0, 0, 0.5);
+
+    /* You can tell a column to span the entire row by using -1 in the end. That means that the
+     element should start counting from the end. In our example with 4 columns that would mean that it
+     gets set to 5.*/
+    grid-column-start: 1;
+    grid-column-end: -1;
+
+    /* This creates an overlap with our element 3. Elements can overlap in a grid. They can occupy the
+     same cell if you explicitly create such a situation. The grid tries to avoid this by default. The
+     DOM order is important when deciding which one is on top. As element 3 comes after element 2, then it is
+     on top. We can change this using z-index as the grid supports it. */
+    grid-row-start: 2;
+    grid-row-end: span 1; /* This is the default, so could technically be omitted. */
 }
 
 .el3 {
     background: rgba(0, 128, 0, 0.5);
     /* CSS grid thinks in terms of lines.  */
     grid-column-start: 3;
+
     /* By default it would span one cell, but we can tell it to span more. */
-    grid-column-end: 5;
+    /*grid-column-end: 5;*/
+
+    /* Another way of telling it how many cells to span can be done using the span keyword. */
+    grid-column-end: span 2;
+
     grid-row-start: 1;
     /* We set it to 3, as 2 marks the end of the first row. One row or cell has a line it starts from and
      a line it ends on. Where it ends, another cell/row begins. So 1 marks the start of the first row and
