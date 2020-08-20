@@ -12,6 +12,11 @@
      4 x 25% columns, then you could use another way. You could use a helper CSS method for that.
      With repeat you define how many times you want to repeat something and then what you want to repeat.*/
     grid-template-columns: repeat(4, 25%);
+    /* You can create automatically generated named rows using the following syntax. This gives us
+    an automatically named area called "hd" that we can reference. However, defining the areas
+    explicitly is clearer. */
+    /* grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];*/
+    /* grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(10px, 200px) [row-2-end row-3-start] 100px [row-3-end];*/
 
     /* To explicitly define rows.
     auto can be used to take up as much space as the content requires. If we define a height for the container,
