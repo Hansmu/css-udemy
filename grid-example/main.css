@@ -29,6 +29,14 @@
     grid-row-gap: 5px;
     /* Shorthand */
     /*grid-gap: 5px 10px;*/
+    /* In order to create named areas, then we have to define rows in strings. Since we have 4 columns and we
+     want our header element to take up the entire row, then we define header four times. A dot can be
+     used to define where you want to leave the area empty. You have to have all of the columns defined
+     otherwise you'll get an invalid property error. Undefined cells, however, simply get hidden.*/
+    /* Grid area does not respect the DOM order if it's so defined. */
+    grid-template-areas: "header header header header"
+                         ". . main main"
+                         "footer footer footer footer";
 }
 
 .el1 {
@@ -38,48 +46,54 @@
 .el2 {
     background: rgba(255, 0, 0, 0.5);
 
-    /* You can tell a column to span the entire row by using -1 in the end. That means that the
-     element should start counting from the end. In our example with 4 columns that would mean that it
-     gets set to 5.*/
-    grid-column-start: 1;
-    grid-column-end: -1;
+    /*!* You can tell a column to span the entire row by using -1 in the end. That means that the*/
+    /* element should start counting from the end. In our example with 4 columns that would mean that it*/
+    /* gets set to 5.*!*/
+    /*grid-column-start: 1;*/
+    /*grid-column-end: -1;*/
 
-    /* This creates an overlap with our element 3. Elements can overlap in a grid. They can occupy the
-     same cell if you explicitly create such a situation. The grid tries to avoid this by default. The
-     DOM order is important when deciding which one is on top. As element 3 comes after element 2, then it is
-     on top. We can change this using z-index as the grid supports it. */
-    /*grid-row-start: 2;*/
-    /* After naming we can refer to the lines using our named references. */
-    grid-row-start: row-2-start;
-    grid-row-end: span 1; /* This is the default, so could technically be omitted. */
+    /*!* This creates an overlap with our element 3. Elements can overlap in a grid. They can occupy the*/
+    /* same cell if you explicitly create such a situation. The grid tries to avoid this by default. The*/
+    /* DOM order is important when deciding which one is on top. As element 3 comes after element 2, then it is*/
+    /* on top. We can change this using z-index as the grid supports it. *!*/
+    /*!*grid-row-start: 2;*!*/
+    /*!* After naming we can refer to the lines using our named references. *!*/
+    /*grid-row-start: row-2-start;*/
+    /*grid-row-end: span 1; !* This is the default, so could technically be omitted. *!*/
 
     /* The shortend for that would be */
     /* grid-row: row-2-start/span 1 */
 
+    grid-area: main;
 }
 
 .el3 {
     background: rgba(0, 128, 0, 0.5);
     /* CSS grid thinks in terms of lines.  */
-    grid-column-start: 3;
+    /*grid-column-start: 3;*/
 
-    /* By default it would span one cell, but we can tell it to span more. */
-    /*grid-column-end: 5;*/
+    /*!* By default it would span one cell, but we can tell it to span more. *!*/
+    /*!*grid-column-end: 5;*!*/
 
-    /* Another way of telling it how many cells to span can be done using the span keyword. */
-    grid-column-end: span 2;
+    /*!* Another way of telling it how many cells to span can be done using the span keyword. *!*/
+    /*grid-column-end: span 2;*/
 
-    grid-row-start: 1;
-    /* We set it to 3, as 2 marks the end of the first row. One row or cell has a line it starts from and
-     a line it ends on. Where it ends, another cell/row begins. So 1 marks the start of the first row and
-     2 marks the end of the first row and the start of the second one. If we'd set it to 2, then it'd only
-     run until the start of the second unit, thus not spanning it. So 3 marks the end of the second row.*/
-    grid-row-end: 3;
+    /*grid-row-start: 1;*/
+    /*!* We set it to 3, as 2 marks the end of the first row. One row or cell has a line it starts from and*/
+    /* a line it ends on. Where it ends, another cell/row begins. So 1 marks the start of the first row and*/
+    /* 2 marks the end of the first row and the start of the second one. If we'd set it to 2, then it'd only*/
+    /* run until the start of the second unit, thus not spanning it. So 3 marks the end of the second row.*!*/
+    /*grid-row-end: 3;*/
 
     /* Grid area can be used to define all of the properties */
     /* grid-area: row-1-start / 2 / grid-2-end / span 3 */
+
+    /* No longer have to define where it starts and ends or how much it spans. It's defined in the grid
+    container.*/
+    grid-area: header;
 }
 
 .el4 {
     background: rgba(0, 4, 255, 0.5);
+    grid-area: footer;
 }
