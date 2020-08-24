@@ -51,10 +51,10 @@
     Start and end don't mean left and right. It depends on the read direction set on the browser. If the read direction
     is set from right to left, then start means right and end means left.
     */
-    justify-items: center;
+    justify-items: stretch;
 
     /* In order to position the elements within their grid rows. The same options apply as to justify-items.*/
-    align-items: center;
+    align-items: stretch;
 
     /* When the container is larger than the grid, then this property can be used to position the grid content.
     start, center, end apply. They move it in regards to the container element. stretch is also an option, but it
@@ -90,6 +90,9 @@
     /* grid-row: row-2-start/span 1 */
 
     grid-area: main;
+    /* These can be used to position only a certain element, instead of positioning all of the elements. */
+    justify-self: center;
+    align-self: center;
 }
 
 .el3 {
