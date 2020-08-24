@@ -42,6 +42,19 @@
     grid-template-areas: "header header header header"
                          ". . main main"
                          "footer footer footer footer";
+    /* In order to position the elements within their grid columns.
+    center puts them in the middle of the area.
+    start at the start of the area.
+    end at the end of the area.
+    stretch is the default and it makes the element fit the area. When stretch isn't defined, then the elements take up
+    only as much space as they need.
+    Start and end don't mean left and right. It depends on the read direction set on the browser. If the read direction
+    is set from right to left, then start means right and end means left.
+    */
+    justify-items: center;
+
+    /* In order to position the elements within their grid rows. The same options apply as to justify-items.*/
+    align-items: center;
 }
 
 .el1 {
