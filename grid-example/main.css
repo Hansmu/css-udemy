@@ -55,6 +55,13 @@
 
     /* In order to position the elements within their grid rows. The same options apply as to justify-items.*/
     align-items: center;
+
+    /* When the container is larger than the grid, then this property can be used to position the grid content.
+    start, center, end apply. They move it in regards to the container element. stretch is also an option, but it
+    does not override the sizes set, so it has the same effect as start. */
+    justify-content: center;
+    /* align for the Y axis */
+    align-content: center;
 }
 
 .el1 {
