@@ -17,7 +17,11 @@ body {
     margin: 0;
     /* All child elements that are positioned non-statically won't be part of the grid. E.g. static, absolute. */
     display: grid;
-    grid-template-rows: 3.5rem auto 8rem;
+    /* The footer has a dynamic size, but cannot simply use auto on it, as then the two autos would share the content
+    between the two of them, causing irregular sizes.
+    fit-content allows use to specify a min height that it will have. In our example it would be 8rem. Otherwise it
+    takes up as much space as it needs.*/
+    grid-template-rows: 3.5rem auto fit-content(8rem);
     grid-template-areas: "header"
                          "main"
                          "footer";
