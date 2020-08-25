@@ -7,7 +7,9 @@
     justify-content: center;
     grid-gap: 1.5rem;
 
-    /* The below properties work for when you aren't defining the rows and columns explicitly yourself. */
+    /* The below properties work for when you aren't defining the rows and columns explicitly yourself. That is, you can
+     define some rows and columns initially and after the content runs out of space to place itself in, then new rows
+     and columns start getting generated automatically. */
     /* The default is auto. It defines the behavior of the automatically generated rows.*/
     grid-auto-rows: minmax(8rem, auto);
     /* Defines where the content should be added automatically. The default is set to row. */
