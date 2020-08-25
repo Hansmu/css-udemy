@@ -1,0 +1,31 @@
+.container {
+    margin: 20px;
+    display: grid;
+    /* When the grid display is applied, then the rows are generated automatically depending on your content. When we don't
+     know how many rows we need, then we can rely on the grid to automatically create them. */
+    grid-template-columns: repeat(2, 15rem);
+    justify-content: center;
+    grid-gap: 1.5rem;
+
+    /* The below properties work for when you aren't defining the rows and columns explicitly yourself. */
+    /* The default is auto. It defines the behavior of the automatically generated rows.*/
+    grid-auto-rows: minmax(8rem, auto);
+    /* Defines where the content should be added automatically. The default is set to row. */
+    grid-auto-flow: row;
+    /* If the automatic generation is set to column, then  you can define their size.*/
+    grid-auto-columns: 5rem;
+}
+
+.quote {
+  border: 1px solid #fa923f;
+  background: #ffbd87;
+  font-family: sans-serif;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.quote--featured {
+  border: #ff4213;
+  background: #ff9f87;
+  grid-column: span 2;
+}
