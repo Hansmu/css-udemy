@@ -17,6 +17,14 @@
     grid-auto-rows: minmax(8rem, auto);
     /* Defines where the content should be added automatically. The default is set to row. */
     grid-auto-flow: row;
+
+    /* dense can be used to fill up all cells. For example if you have a cell that can fit a single element, but the following
+     element takes up 2 cells, then you'd have an empty cell in the middle if there isn't enough for the 2 span cell. If you use dense, then
+     another element is moved up to fill that space. This creates problems for screen readers, though. Screen readers read the DOM.
+     If you change the element order, then screen readers will get different information compared to what the website actually
+     looks like visually. CHANGING THE ORDER OF ELEMENTS VISUALLY ONLY IS NOT ALWAYS RECOMMENDED. */
+    /*grid-auto-flow: row dense;*/
+
     /* If the automatic generation is set to column, then  you can define their size.*/
     grid-auto-columns: 5rem;
 }
@@ -27,6 +35,10 @@
   font-family: sans-serif;
   padding: 1rem;
   border-radius: 5px;
+}
+
+.quote:nth-of-type(2) {
+    grid-column: span 2;
 }
 
 .quote--featured {
