@@ -3,7 +3,10 @@
     display: grid;
     /* When the grid display is applied, then the rows are generated automatically depending on your content. When we don't
      know how many rows we need, then we can rely on the grid to automatically create them. */
-    grid-template-columns: repeat(2, 15rem);
+    /* auto-fill can be used to fill with as many elements as possible. So as many columns as can be fitted on one line. Once
+    the cap is reached, they start getting placed on the next row. */
+    /* auto-fit can be used when you don't have enough items to fill the row. It'll center the content. */
+    grid-template-columns: repeat(auto-fill, 15rem);
     justify-content: center;
     grid-gap: 1.5rem;
 
