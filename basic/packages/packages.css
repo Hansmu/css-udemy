@@ -219,11 +219,17 @@ would be the closest parent with the position defined.
     position: absolute;
     top: 0;
     right: 0;
-    margin: 1.25rem;
+    margin: 0;
     font-size: 0.75rem;
     color: white;
     background: #ff5454;
     padding: 0.5rem;
+    /* Using transform keeps the element in the document flow for normal elements. So if you want to only move it visually,
+     then it's good to use this instead of changing the position. */
+    transform: rotateZ(45deg);
+    /* Transforms happen around the center of the element by default. It can be changed using the transform-origin property.
+     Can use word or unit values. */
+    transform-origin: center;
 }
 
 @media (min-width: 40rem) {
