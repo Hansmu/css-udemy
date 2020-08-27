@@ -79,6 +79,8 @@ the parent component.
     border-radius: 4px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
     position: relative;
+    /* This also crops the element that has transform applied to it. */
+    overflow: hidden;
 }
 
 .package:hover,
@@ -226,10 +228,15 @@ would be the closest parent with the position defined.
     padding: 0.5rem;
     /* Using transform keeps the element in the document flow for normal elements. So if you want to only move it visually,
      then it's good to use this instead of changing the position. */
-    transform: rotateZ(45deg);
+    /* translateX moves the element on the X axis. If we don't apply any transformation, then it'll just move to the right.
+     However, if we apply rotation, then the X and Y axis get rotated as well, so the X axis in our 45 degree case would
+     be moving diagonally to the bottom right. */
+    transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
     /* Transforms happen around the center of the element by default. It can be changed using the transform-origin property.
      Can use word or unit values. */
     transform-origin: center;
+    width: 12rem;
+    text-align: center;
 }
 
 @media (min-width: 40rem) {
