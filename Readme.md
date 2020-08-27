@@ -137,3 +137,11 @@ bottom left, with the main axis heading towards the top left
 and the cross axis heading towards the bottom right.
 
 z-index works on Flexbox items.
+
+## CSS Grid vs Flexbox
+CSS Grid:
+* All about two dimensional positioning. You have rows and columns.
+
+Flexbox:
+* One-dimensional positioning. It's a good choice if you have a single row or column 
+of items.
