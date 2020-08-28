@@ -8,6 +8,13 @@
     perspective: 200px;
     /* This can be used to define how far to the right or left you are with your perspective. */
     perspective-origin: 500px;
+    /* By default, when you rotate the parent by 90 degrees, then all the children disappear as well.
+     This is because the style is set to flat. So the 3D space inside of the parent is flat. */
+    transform: rotateY(90deg);
+    /* The default is flat. Preserve 3D would mean that the 3D space exists outside of the parent as well.
+    So if you're applying a 90 degree transformation to the parent, then that 90 degrees get applied to the children in
+     addition to what they already have applied to them. */
+    transform-style: preserve-3d;
 }
 
 .box {
