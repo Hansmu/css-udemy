@@ -1,0 +1,23 @@
+.container {
+    margin: 150px auto;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    /* perspective can also be used as a property, but it has to be on the parent. So you have the same perspective on
+    all the children. */
+    perspective: 200px;
+    /* This can be used to define how far to the right or left you are with your perspective. */
+    perspective-origin: 500px;
+}
+
+.box {
+    background: red;
+    width: 100%;
+    height: 100%;
+    /* rotateX gets applied towards you. Like watching a coin flip. rotateY gets applied from left to right.
+    Like watching a coin flip but turned 90 degrees. */
+    /* The above comments apply for the default perspective, which is Z. So you're watching the transformation happening
+    from the Z axis. Using the perspective function you can define how close you are to the transformation. The smaller
+    the number, the closer you are. */
+    transform: /*perspective(200px)*/ rotateX(30deg) rotateY(70deg);
+}
