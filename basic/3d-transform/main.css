@@ -27,4 +27,7 @@
     from the Z axis. Using the perspective function you can define how close you are to the transformation. The smaller
     the number, the closer you are. */
     transform: /*perspective(200px)*/ rotateX(30deg) rotateY(70deg);
+    /* This defines what the backside of the element looks like. So once we've gone past the 90 degree boundary. The default
+     is visible. */
+    backface-visibility: hidden;
 }
