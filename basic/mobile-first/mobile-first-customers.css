@@ -8,14 +8,19 @@
 }
 
 .testimonial__image-container {
-    width: 100%;
+    width: 60%;
     max-width: 580px;
     box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.3);
+    /* skewing transforms it into a rhombus. A diamond form. */
+    transform: skewX(20deg);
+    overflow: hidden;
 }
 
 .testimonial__image {
     width: 100%;
     vertical-align: top;
+    /* Scale stretches the element by a multiplier. */
+    transform: skewX(-20deg) scale(1.3);
 }
 
 .testimonial__info {
