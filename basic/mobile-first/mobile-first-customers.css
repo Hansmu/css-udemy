@@ -11,15 +11,15 @@
     width: 60%;
     max-width: 580px;
     box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.3);
-    /* skewing transforms it into a rhombus. A diamond form. */
-    transform: skewX(20deg);
+    /* skewing transforms it into a rhombus. A diamond form. The skew function transforms on the X axis by default. */
+    transform: skew(20deg);
     overflow: hidden;
 }
 
 .testimonial__image {
     width: 100%;
     vertical-align: top;
-    /* Scale stretches the element by a multiplier. */
+    /* Scale stretches the element by a multiplier. Without specifying the axis it scales on both X and Y. */
     transform: skewX(-20deg) scale(1.3);
 }
 
