@@ -11,7 +11,10 @@ for (let i = 0; i < selectPlanButton.length; i++) {
         * values get applied as inline styles. Also, instead of being
         * kebab case, the style is in camelCase. */
         modal.classList.add('open');
-        backdrop.classList.add('open');
+        backdrop.style.display = 'block';
+        setTimeout(function() {
+            backdrop.classList.add('open');
+        }, 10);
     });
 }
 
@@ -24,6 +27,10 @@ function closeModal() {
         modal.classList.remove('open');
     }
     backdrop.classList.remove('open');
+
+    setTimeout(function() {
+        backdrop.style.display = 'none';
+    }, 200); // Has to match the transition speed.
 }
 
 backdrop.addEventListener('click', () => {
@@ -33,5 +40,8 @@ backdrop.addEventListener('click', () => {
 
 toggleButton.addEventListener('click', () => {
     mobileNav.classList.add('open');
-    backdrop.classList.add('open');
+    backdrop.style.display = 'block';
+    setTimeout(function() {
+        backdrop.classList.add('open');
+    }, 10);
 });

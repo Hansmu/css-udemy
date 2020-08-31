@@ -174,7 +174,11 @@ main {
     height: 100vh;
     z-index: 100;
     background: rgba(0, 0, 0, 0.5);
+    /* If we're switching been displaying or not, then the transition is omitted and a hacky solution via JS has to be applied.
+     Have to break the transition and display into separate event cycles. */
     display: none;
+    opacity: 0;
+    transition: opacity 200ms linear;
 }
 
 .modal {
