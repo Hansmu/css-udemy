@@ -315,3 +315,21 @@ main {
         justify-content: center;
     }
 }
+
+.main-nav__item--cta {
+    /* Define the animation, its duration, its initial delay, animation cycles and animation direction. Forwards and
+    backwards can be used to define whether to keep the end state or the start state as its final state.
+     We're currently defining 8 cycles. With alternate that means 4 forward cycles and 4 backward cycles. */
+    animation: wiggle 200ms 3s 8 alternate;
+}
+
+/* Animations are like transitions, except more powerful. Using from and to is the most basic setup for an animation. */
+@keyframes wiggle {
+    from {
+        transform: rotateZ(0);
+    }
+
+    to {
+        transform: rotateZ(10deg);
+    }
+}
