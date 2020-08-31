@@ -179,7 +179,15 @@ main {
 
 .modal {
     position: fixed;
-    display: none;
+    /* There are a list of properties that transition supports. That's why opacity is used for displaying and transform is
+     used for location changing. */
+    opacity: 0;
+    transform: translateY(-3rem);
+    /* First parameter is required and it defines what property do you want to watch for changes. Can set it to all to
+     watch for all changes or just a comma separated list for what to watch. Secondly define what the time frame is over
+     which the animation plays. Additionally, adding a timing function is possible to define how the animation progresses over time.
+     Ex ease-in starts slower and ends faster. The last parameter is the initial display of the animation.*/
+    transition: opacity 200ms ease-in, transform 500ms;
     z-index: 200;
     top: 20%;
     left: 30%;
@@ -281,6 +289,8 @@ main {
 
 .open {
     display: initial !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 @media (min-width: 40rem) {
