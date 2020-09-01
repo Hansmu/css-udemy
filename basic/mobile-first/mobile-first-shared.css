@@ -6,6 +6,14 @@
  look exactly like on the example font page. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 
+/* The root selector selects the entire document. You could also define the variables in a more specific selector, but
+that'd mean that the variable would only be available inside of that selector. Defining it in the :root it creates a global
+variable. */
+:root {
+    --dark-green: #0e4f1f;
+    --highlight-color: #ff1b68;
+}
+
 html {
     height: 100%;
 }
@@ -45,7 +53,10 @@ main {
 }
 
 .main-header__brand {
-    color: #0e4f1f;
+    /* You can add a fallback to the color. This isn't a fallback if the browser does not support variables, but it's a
+     fallback to if you forgot to load the file with the variable in it or such. It's most useful with third party
+     libraries where you aren't sure if it's defined or not. */
+    color: var(--dark-green, #0e4f1f);
     text-decoration: none;
     font-weight: bold;
 }
@@ -72,7 +83,7 @@ main {
 
 .main-nav__item a,
 .mobile-nav__item a{
-    color: #0e4f1f;
+    color: var(--dark-green);
     text-decoration: none;
     font-weight: bold;
     padding: 3px 0;
@@ -87,7 +98,7 @@ main {
 .main-nav__item--cta a,
 .mobile-nav__item--cta a {
     color: white;
-    background: #ff1b68;
+    background: var(--highlight-color);
     padding: 0.5rem 1rem;
     border-radius: 8px;
 }
@@ -97,7 +108,7 @@ main {
 .mobile-nav__item--cta a:hover,
 .mobile-nav__item--cta a:active {
     background: white;
-    color: #ff1b68;
+    color: var(--highlight-color);
     border-bottom: none;
 }
 
@@ -133,10 +144,10 @@ main {
 
 
 .button {
-    background: #0e4f1f;
+    background: var(--dark-green);
     color: white;
     font: inherit; /* To force inheritance instead of the browser overwriting the fonts. */
-    border: 2px solid #0e4f1f;
+    border: 2px solid var(--dark-green);
     padding: 0.5rem;
     border-radius: 8px;
     font-weight: bold;
@@ -146,7 +157,7 @@ main {
 .button:hover,
 .button:active {
     background: white;
-    color: #0e4f1f;
+    color: var(--dark-green);
 }
 .button:focus {
     outline: none;
@@ -212,8 +223,8 @@ main {
 }
 
 .modal__action {
-    border: 1px solid #0e4f1f;
-    background: #0e4f1f;
+    border: 1px solid var(--dark-green);
+    background: var(--dark-green);
     text-decoration: none;
     color: white;
     font: inherit;
