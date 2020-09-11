@@ -145,3 +145,31 @@ CSS Grid:
 Flexbox:
 * One-dimensional positioning. It's a good choice if you have a single row or column 
 of items.
+
+## Future proofing CSS
+Prefixes are used for browsers to implement experimental technology. In case the implementation
+changes before its finalized, then the experimental implementation will still continue working.
+
+http://shouldiprefix.com/ can be used to check what features have to be prefixed.
+
+Autoprefixer can be used to automatically prefix features.
+
+@supports can be used to check if a browser supports a certain feature.
+```
+@supports (display: grid) {
+    .container {
+        display: grid;
+    }
+}
+```
+
+Different browsers have different defaults. Box sizing, h1 size etc. Util libraries can be
+used to eliminate browser specific styles. Have to have it as the first import. This means
+extra downloads, though.
+
+CSS is case insensitive, so use kebab-case for class names. Name the classes by feature, e.g.
+.page-title, and not by what it will apply, e.g. .title-blue.
+
+BEM is a naming method for CSS that tries to minimize class name clashes.
+It uses `.BLOCK__ELEMENT--MODIFIER` for its naming. E.g. `.menu-main__item--size-big`.
+To apply for all buttons you could use `.button__--success`
