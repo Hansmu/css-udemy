@@ -173,3 +173,7 @@ CSS is case insensitive, so use kebab-case for class names. Name the classes by 
 BEM is a naming method for CSS that tries to minimize class name clashes.
 It uses `.BLOCK__ELEMENT--MODIFIER` for its naming. E.g. `.menu-main__item--size-big`.
 To apply for all buttons you could use `.button__--success`
+
+## SASS
+Does not run in the browser, but extends CSS during development. Has to be compiled before 
+production.
