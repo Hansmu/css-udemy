@@ -177,3 +177,7 @@ To apply for all buttons you could use `.button__--success`
 ## SASS
 Does not run in the browser, but extends CSS during development. Has to be compiled before 
 production.
+
+`sass main.scss main.css` to generate a CSS file from a SCSS file.
+
+`sass --watch main.scss:main.css` to enter watch mode.
