@@ -1,7 +1,11 @@
 /* Defining variables start with a $ */
-$main-color: #521751;
+//$main-color: #521751;
+$colors: (
+  main: #521751,
+  secondary: #fa923f
+);
 /* It's still a variable, but officially it's named a list as it's more than one value. */
-$border-default: 0.05rem solid $main-color;
+$border-default: 0.05rem solid map-get($colors, main);
 
 @import "typography.css";
 /* SASS uses indentation instead of curlies and no end of line ;. However, SCSS keeps these. */
@@ -78,7 +82,7 @@ body {
 
   .documentation-link {
     text-decoration: none;
-    color: $main-color;
+    color: map-get($colors, main);
     display: block;
     padding: 0.2rem;
     border: $border-default;
@@ -87,8 +91,8 @@ body {
   .documentation-link:hover,
   .documentation-link:active {
     color: white;
-    background: #fa923f;
-    border-color: #fa923f;
+    background: map-get($colors, secondary);
+    border-color: map-get($colors, secondary);
   }
 }
 
