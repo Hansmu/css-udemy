@@ -5,6 +5,11 @@ and inlined into the file. A CSS file would be kept separately and it would be q
 /* SASS uses indentation instead of curlies and no end of line ;. However, SCSS keeps these. */
 html {
   font-size: 94.75%;
+
+  /* Can nest media queries to group the code better and avoid having to rewrite the selector again. */
+  @media (min-width: 40rem) {
+    font-size: 125%;
+  }
 }
 
 body {
@@ -35,6 +40,10 @@ body {
   box-shadow: $size-tiny $size-tiny $size-tiny / 2 #ccc;
   width: 90%;
   box-sizing: border-box;
+
+  @media (min-width: 40rem) {
+    width: 30rem;
+  }
 }
 
 .sass-introduction p {
@@ -49,6 +58,10 @@ body {
   margin: $size-default * 2 0;
   width: 90%;
   box-sizing: border-box;
+
+  @media (min-width: 40rem) {
+    width: 30rem;
+  }
 }
 
 .section-header {
@@ -88,16 +101,4 @@ body {
     background: map-get($colors, secondary);
     border-color: map-get($colors, secondary);
   }
-}
-
-
-@media (min-width: 40rem) {
-html {
-  font-size: 125%;
-}
-
-.sass-introduction,
-.sass-details {
-  width: 30rem;
-}
 }
