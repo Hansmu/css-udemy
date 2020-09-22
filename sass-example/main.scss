@@ -98,12 +98,13 @@ body {
     display: block;
     padding: $size-tiny;
     border: $border-default;
-  }
 
-  .documentation-link:hover,
-  .documentation-link:active {
-    color: white;
-    background: map-get($colors, secondary);
-    border-color: map-get($colors, secondary);
+    /* & means that it should be connected with the parent selector. */
+    &:hover,
+    &:active {
+      color: white;
+      background: map-get($colors, secondary);
+      border-color: map-get($colors, secondary);
+    }
   }
 }
