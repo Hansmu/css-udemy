@@ -3,12 +3,27 @@ and inlined into the file. A CSS file would be kept separately and it would be q
 @import "_variables.scss";
 @import "typography.scss";
 /* SASS uses indentation instead of curlies and no end of line ;. However, SCSS keeps these. */
+
+/* A reusable function. Can provide a parameter as well. */
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin media-min-width($width) {
+  @media (min-width: $width) {
+    @content; /* Can provide dynamic content. */
+  }
+}
+
 html {
   font-size: 94.75%;
 
   /* Can nest media queries to group the code better and avoid having to rewrite the selector again. */
-  @media (min-width: 40rem) {
-    font-size: 125%;
+  @include media-min-width(40rem) {
+    font-size: 125%; /* Dynamic content is given as such */
   }
 }
 
@@ -18,10 +33,7 @@ body {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  @include display-flex();
   /* Can write dash separated properties as nested properties. */
   flex: {
     direction: column;
@@ -72,10 +84,7 @@ body {
   list-style: none;
   margin: $size-default 0 0 0;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  @include display-flex();
   flex-direction: column;
 
   li {
